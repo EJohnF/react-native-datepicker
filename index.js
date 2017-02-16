@@ -29,6 +29,7 @@ class DatePicker extends Component {
     this.state = {
       date: this.getDate(),
       modalVisible: false,
+      isReset: false,
       animatedHeight: new Animated.Value(0)
     };
 
@@ -154,7 +155,18 @@ class DatePicker extends Component {
     const {date, placeholder, customStyles} = this.props;
 
     if (!date && placeholder) {
+      if(this.state.isReset == true) {
+        this.setState({
+          date: new Date(),
+          isReset: false
+        });
+      } 
       return (<Text style={[Style.placeholderText, customStyles.placeholderText]}>{placeholder}</Text>);
+    }
+    if(this.state.isReset == false) {
+        this.setState({
+          isReset: true
+        });
     }
     return (<Text style={[Style.dateText, customStyles.dateText]}>{this.getDateStr()}</Text>);
   }
