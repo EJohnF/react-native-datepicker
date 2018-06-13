@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import Style from './style';
 import Moment from 'moment';
+import PropTypes from 'prop-types';
 
 const FORMATS = {
   'date': 'YYYY-MM-DD',
@@ -160,7 +161,7 @@ class DatePicker extends Component {
           date: new Date(),
           isReset: false
         });
-      } 
+      }
       return (<Text style={[Style.placeholderText, customStyles.placeholderText]}>{placeholder}</Text>);
     }
     if(this.state.isReset == false) {
@@ -380,25 +381,25 @@ DatePicker.defaultProps = {
 };
 
 DatePicker.propTypes = {
-  mode: React.PropTypes.oneOf(['date', 'datetime', 'time']),
-  date: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.instanceOf(Date)]),
-  format: React.PropTypes.string,
-  minDate: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.instanceOf(Date)]),
-  maxDate: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.instanceOf(Date)]),
-  height: React.PropTypes.number,
-  duration: React.PropTypes.number,
-  confirmBtnText: React.PropTypes.string,
-  cancelBtnText: React.PropTypes.string,
-  iconSource: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.object]),
-  customStyles: React.PropTypes.object,
-  showIcon: React.PropTypes.bool,
-  disabled: React.PropTypes.bool,
-  onDateChange: React.PropTypes.func,
-  onOpenModal: React.PropTypes.func,
-  onCloseModal: React.PropTypes.func,
-  placeholder: React.PropTypes.string,
-  modalOnResponderTerminationRequest: React.PropTypes.func,
-  is24Hour: React.PropTypes.bool
+  mode: PropTypes.oneOf(['date', 'datetime', 'time']),
+  date: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+  format: PropTypes.string,
+  minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+  maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+  height: PropTypes.number,
+  duration: PropTypes.number,
+  confirmBtnText: PropTypes.string,
+  cancelBtnText: PropTypes.string,
+  iconSource: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  customStyles: PropTypes.object,
+  showIcon: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onDateChange: PropTypes.func,
+  onOpenModal: PropTypes.func,
+  onCloseModal: PropTypes.func,
+  placeholder: PropTypes.string,
+  modalOnResponderTerminationRequest: PropTypes.func,
+  is24Hour: PropTypes.bool
 };
 
 export default DatePicker;

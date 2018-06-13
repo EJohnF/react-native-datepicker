@@ -45,7 +45,8 @@
     "react-addons-test-utils": "~15.4.0",
     "react-dom": "~15.4.0",
     "react-native-mock": "^0.2.8",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "prop-types": "^15.6.1"
   },
   "config": {
     "commitizen": {
